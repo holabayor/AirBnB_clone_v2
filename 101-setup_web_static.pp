@@ -19,8 +19,8 @@ file { '/data/web_static/current':
   target => '/data/web_static/releases/test/'
 }
 file { '/data/':
-  group => 'ubuntu',
-  owner => 'ubuntu',
+  group   => 'ubuntu',
+  owner   => 'ubuntu',
   recurse =>true
 }
 exec {
