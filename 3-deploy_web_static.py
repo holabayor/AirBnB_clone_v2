@@ -3,7 +3,7 @@
 Fabric script that generates a .tgz archive
 """
 from datetime import datetime
-from fabric.api import run, put, env
+from fabric.api import local, run, put, env
 from pathlib import Path
 
 env.user = 'ubuntu'
