@@ -23,18 +23,17 @@ def do_deploy(archive_path):
     filename = archive_path.split('/')[-1]
     if put(archive_path, '/tmp/{}'.format(filename)).failed is True:
         return False
-    if run('mkdir -p /data/web_static/releases/{}'.format(folder))
-    .failed is True:
+    if run('mkdir -p /data/web_static/releases/{}\
+            '.format(folder)).failed is True:
         return False
-    if run('tar -xzf /tmp/{} -C /data/web_static/releases/{}/'.format(filename,
-                                                                      folder))
-    .failed is True:
+    if run('tar -xzf /tmp/{} -C /data/web_static/releases/{}/i\
+            '.format(filename, folder)).failed is True:
         return False
     if run('rm /tmp/{}'.format(filename)).failed is True:
         return False
     if run('mv /data/web_static/releases/{}/web_static/* \
-            /data/web_static/releases/{}/'.format(folder, folder))
-    .failed is True:
+            /data/web_static/releases/{}/\
+            '.format(folder, folder)).failed is True:
         return False
     if run('rm -rf /data/web_static/current').failed is True:
         return False
