@@ -78,6 +78,9 @@ def deploy():
 
 
 def do_clean(number=0):
+    """
+        Delete out of date archives
+    """
     number = int(number)
     if number < 2:
         number = 1
