@@ -19,11 +19,12 @@ file { '/data/web_static/current':
   target => '/data/web_static/releases/test/'
 }
 file { '/data/':
-group => 'ubuntu',
-owner => 'ubuntu'
+  group => 'ubuntu',
+  owner => 'ubuntu',
+  recurse =>true
 }
 exec {
-  command => 'sudo sed -i '44 a \\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t}' /etc/nginx/sites-available/default',
+  command => 'sudo sed -i \'44 a \\tlocation /hbnb_static {\n\t\talias /data/web_static/current/\n\t}\' /etc/nginx/sites-available/default',
   path => '/usr/bin/:usr/local/bin/:/bin/'
 }
 exec { 'nginx restart':
