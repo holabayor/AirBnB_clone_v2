@@ -141,7 +141,7 @@ class HBNBCommand(cmd.Cmd):
                     value = int(value)
             setattr(new_instance, key, value)
 
-        models.storage.save()
+        new_instance.save()
         print(new_instance.id)
 
     def help_create(self):
@@ -173,7 +173,7 @@ class HBNBCommand(cmd.Cmd):
 
         key = c_name + "." + c_id
         try:
-            print(storage.all()[key])
+            print(models.storage.all()[key])
         except KeyError:
             print("** no instance found **")
 
