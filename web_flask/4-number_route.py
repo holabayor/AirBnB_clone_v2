@@ -27,12 +27,12 @@ def c_route(text):
 @app.route('/python/<text>', strict_slashes=False)
 def python_route(text='is cool'):
     text = text.replace('_', ' ')
-    return 'Python %s' % text
+    return 'Python %s' % n
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def numbers(n):
-    return 'Python %s' % n
+    return '%s is a number' % n
 
 
 if __name__ == '__main__':
