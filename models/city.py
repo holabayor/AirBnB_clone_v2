@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """ City Module for HBNB project """
-""" holds class City"""
 import models
 from models.base_model import BaseModel, Base
-from os import getenv
 import sqlalchemy
+from os import getenv
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 from sqlalchemy import ForeignKey

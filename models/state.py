@@ -2,6 +2,7 @@
 """ State Module for HBNB project """
 import models
 from models.base_model import BaseModel, Base
+from models.city import City
 from os import getenv
 import sqlalchemy
 from sqlalchemy import Column, String
@@ -27,7 +28,7 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """fs getter attribute that returns City instances"""
-            values_city = models.storage.all("City").values()
+            values_city = models.storage.all(City).values()
             list_city = []
             for city in values_city:
                 if city.state_id == self.id:
