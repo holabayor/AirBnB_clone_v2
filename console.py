@@ -2,7 +2,7 @@
 """ Console Module """
 import cmd
 import sys
-import shlex 
+import shlex
 from models.base_model import BaseModel
 import models
 from models.user import User
@@ -230,7 +230,6 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return False
         print(obj_list)
-
 
     def help_all(self):
         """ Help information for the all command """
