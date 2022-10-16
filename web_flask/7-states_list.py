@@ -16,7 +16,7 @@ def states():
 
 
 @app.teardown_appcontext
-def remove_session():
+def remove_session(exception):
     storage.close()
 
 
