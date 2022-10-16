@@ -5,7 +5,7 @@ from models.base_model import BaseModel, Base
 from os import getenv
 import sqlalchemy
 from sqlalchemy import Column, String, Integer, Float, Table, ForeignKey
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 
 
 if getenv('HBNB_TYPE_STORAGE') == 'db':
@@ -50,7 +50,7 @@ class Place(BaseModel, Base):
                                 nullable=False)
         latitude = Column(Float)
         longitude = Column(Float)
-        reviews = relationship("Review", backref="place")
+        reviews = relationship("Review", backref="places")
         amenities = relationship("Amenity",
                                  secondary='place_amenity',
                                  viewonly=False,
