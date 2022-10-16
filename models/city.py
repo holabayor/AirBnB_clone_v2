@@ -4,9 +4,8 @@ import models
 from models.base_model import BaseModel, Base
 import sqlalchemy
 from os import getenv
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.orm import relationship
-from sqlalchemy import ForeignKey
 
 
 class City(BaseModel, Base):
@@ -19,8 +18,7 @@ class City(BaseModel, Base):
                           ForeignKey('states.id'),
                           nullable=False)
         places = relationship("Place",
-                              backref="cities",
-                              cascade="all, delete-orphan")
+                              backref="city")
     else:
         name = ""
         state_id = ""
