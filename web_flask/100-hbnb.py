@@ -5,14 +5,12 @@ Script that starts a Flask web application
 
 from flask import Flask, render_template
 from models import storage
-from models.state import State
 app = Flask(__name__)
 
 
-@app.route('/states_list', strict_slashes=False)
-def states():
-    all_states = storage.all("State")
-    return render_template('7-states_list.html', all_states=all_states)
+@app.route('/hbnb', strict_slashes=False)
+def cities():
+    return render_template('100-hbnb.html')
 
 
 @app.teardown_appcontext
